@@ -42,7 +42,7 @@ The value associated with the parameter `commandsFile` has to be the path of the
 
 Every line of the file has to be associated with a single command.
 
-## Example of use
+## Example of Use
 
 To generate the script files associated with the commands that are contained in a txt file, you have to run the following command:
 

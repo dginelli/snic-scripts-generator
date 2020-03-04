@@ -39,14 +39,19 @@ Usage: SNIC Scripts Generator [options]
 The parameters marked with the symbol * are mandatory. Moreover, it is necessary to specify at least one of these parameters: `-d`, `-h`, `-m`, `-s`.
 
 The value associated with the parameter `commandsFile` has to be the path of the file that contains the commands that have to be executed.
+
 Every line of the file has to be associated with a single command.
 
 ## Example of use
 
-To generate the script files associated with the commands contained in the `commands.txt` file, you have to run the following command:
+To generate the script files associated with the commands that are contained in a txt file, you have to run the following command:
 
 ```
 java -jar snic-scripts-generator-0.0.1-SNAPSHOT-jar-with-dependencies.jar --outputDirectory <outputDirectoryPath> --commandsFile <commandsFile> --account <accountName> -h 1
 ```
 
+In this case, since only the parameter `-h` has been specified with the value `1`, one hour will be reserved for every job. 
+
 The program will generate the folder `jobs` that contains all the script files that have to be executed, and the file `main.sh` that can be used to submit the jobs associated with the script files in SNIC.
+
+Upload these files on you `pfs` home folder, and run the command: `source main.sh` in order to submit your jobs.

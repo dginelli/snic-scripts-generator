@@ -38,7 +38,7 @@ Usage: SNIC Scripts Generator [options]
 
 The parameters marked with the symbol * are mandatory. Moreover, it is necessary to specify at least one of these parameters: `-d`, `-h`, `-m`, `-s`.
 
-The value associated with the parameter `commandsFile` has to be the path of the file that contains the commands that have to be executed.
+The value associated with the parameter `commandsFile` is the path of the file that contains the commands that have to be executed.
 
 Every line of the file has to be associated with a single command.
 

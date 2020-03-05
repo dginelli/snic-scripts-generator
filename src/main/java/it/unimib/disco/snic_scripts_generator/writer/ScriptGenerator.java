@@ -79,7 +79,7 @@ public class ScriptGenerator {
 			mainFile = new BufferedWriter(new OutputStreamWriter(
 					new FileOutputStream(new File(outputDirectory + File.separator + MAIN_SCRIPT_FILE), true), utf8));
 
-			mainFile.write("#!/bin/bash\n\n");
+			mainFile.write("#!/bin/bash" + System.getProperty("line.separator") + System.getProperty("line.separator"));
 			
 			int count = 1;
 			
@@ -92,12 +92,13 @@ public class ScriptGenerator {
 								new File(outputDirectory + File.separator + SCRIPT_FOLDER_NAME + File.separator 
 										+ SCRIPT_BASE_FILE_NAME + count + ".sh")), utf8));
 	        	
-				scriptFileWriter.write("#!/bin/bash\n\n");
-				scriptFileWriter.write("#SBATCH -A " + account + "n\n");
-				scriptFileWriter.write("#SBATCH --time=" + time + "\n\n");
+				scriptFileWriter.write("#!/bin/bash" + System.getProperty("line.separator") + System.getProperty("line.separator"));
 				
-				mainFile.write("sbatch " + "jobs/" + SCRIPT_BASE_FILE_NAME + count + ".sh" + "\n");
+				scriptFileWriter.write("#SBATCH -A " + account + System.getProperty("line.separator"));
+				scriptFileWriter.write("#SBATCH --time=" + time + System.getProperty("line.separator") + System.getProperty("line.separator"));
 				
+				mainFile.write("sbatch " + "jobs/" + SCRIPT_BASE_FILE_NAME + count + ".sh" + System.getProperty("line.separator"));
+
 				scriptFileWriter.write("srun " + command);
 				mainFile.flush();
 				scriptFileWriter.flush();

@@ -1,4 +1,5 @@
-# snic-scripts-generator
+# Snic Scripts Generator
+
 This program allows the generation of the script files to run the experiments with SNIC (Swedish National Infrastructure for Computing).
 
 ## Getting Started
